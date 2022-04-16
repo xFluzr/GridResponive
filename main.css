@@ -1,0 +1,43 @@
+@import "https://fonts.google.com/specimen/Barlow+Semi+Condensed";
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+:root{
+    --Moderateviolet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+body{
+    font-size: 13px;
+    height: 100vh;
+    background-color: var(--Light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: bold;
+    width: 100%;
+}
+.container{
+    margin: 10% auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+.card{
+    padding: 1.25em;
+    border: 2px black solid;
+    border-radius: 15px;
+}
+
+/* Styling each card directly*/
+.card--bg-purple{
+    background-color:  var(--Moderateviolet);
+}
