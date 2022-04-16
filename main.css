@@ -18,26 +18,87 @@ body{
     background-color: var(--Light-grayish-blue);
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: bold;
     width: 100%;
+    line-height: 1.5;
 }
 .container{
-    margin: 10% auto;
-    max-width: 1000px;
+    max-width: 1440px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
-}
-.card{
-    padding: 1.25em;
-    border: 2px black solid;
-    border-radius: 15px;
+    grid-template-rows: 450px 500px;
+    gap: 30px;
 }
 
-/* Styling each card directly*/
+/*Default card styling*/
+.card{
+    padding: 2.3em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card>.quote{
+    opacity: 70%;
+}
+.userInfo{
+    display: flex; 
+    color:var(--Light-grayish-blue)
+    
+}
+.educationStatus{
+    opacity: 50%;
+}
+.header{
+    font-size: 1.25rem;
+}
+.userInfo>img{
+    margin-right: 1.1em;
+    border-radius:50% ;
+}
+/* Styling card directly*/
+
+/*Purple card*/
 .card--bg-purple{
+    grid-column: 0/2;
     background-color:  var(--Moderateviolet);
+    color:var(--White);
+}
+.card--bg-purple>img{
+    border: 1px solid var();
+}
+/*Small card(light-grey)*/
+.card--sm--grey{
+    color:var(--White);
+    grid-column: 2/3;
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+
+/*Kira Card(white)*/
+.card--bg--white{
+    background-color: var(--White);
+    grid-column: 3/4;
+    grid-row: 1/3;
+    color:var(--Very-dark-grayish-blue)
+}
+
+/*Jeanette card(white)*/
+.card--sm-white{
+    background-color: var(--White);
+    color:var(--Very-dark-grayish-blue);
+}
+
+.card--bg--white>.userInfo,
+.card--sm-white>.userInfo{
+    color:var(--Very-dark-grayish-blue)
+}
+
+
+.card--bg--dark{
+    background-color:var(--Very-dark-blackish-blue);
+    color:var(--White)
 }
