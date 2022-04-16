@@ -13,25 +13,35 @@
     --Light-grayish-blue: hsl(210, 46%, 95%);
 }
 body{
+    
     font-size: 13px;
-    height: 100vh;
     background-color: var(--Light-grayish-blue);
     display: flex;
     justify-content: center;
-    
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: bold;
     width: 100%;
     line-height: 1.5;
 }
 .container{
+    margin: 5rem 1rem;
+    height: 812px;
     max-width: 1440px;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 450px 500px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 30px;
+    
 }
+/*Responsive container*/
 
+@media(max-width:1000px){
+    .container{
+        margin: 100px 10px;
+        display: flex;
+        flex-direction: column;
+    }
+}
 /*Default card styling*/
 .card{
     padding: 2.3em;
@@ -53,7 +63,8 @@ body{
     opacity: 50%;
 }
 .header{
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 .userInfo>img{
     margin-right: 1.1em;
@@ -63,33 +74,54 @@ body{
 
 /*Purple card*/
 .card--bg-purple{
-    grid-column: 0/2;
+    z-index: 1;
+    grid-column: 1/3;
     background-color:  var(--Moderateviolet);
     color:var(--White);
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
-.card--bg-purple>img{
-    border: 1px solid var();
+.card--bg-purple>.userInfo>img{
+    border: 2px hsl(263, 72%, 65%) solid ;
+}
+.svgImg{
+    z-index: -1;
+    position:absolute;
+    right: 10%;
+    top: 0;
+    
 }
 /*Small card(light-grey)*/
 .card--sm--grey{
     color:var(--White);
-    grid-column: 2/3;
+    grid-column: 3/4;
     background-color: var(--Very-dark-grayish-blue);
 }
-
+.card--sm--grey>.userInfo>img{
+    border: 2px var(--Light-gray) solid;
+}
 
 /*Kira Card(white)*/
 .card--bg--white{
     background-color: var(--White);
-    grid-column: 3/4;
+    grid-column: 4/5;
     grid-row: 1/3;
     color:var(--Very-dark-grayish-blue)
+    
+}
+.card--bg--white>.userInfo>img{
+    border: 2px var(--Light-gray) solid;
 }
 
 /*Jeanette card(white)*/
 .card--sm-white{
     background-color: var(--White);
     color:var(--Very-dark-grayish-blue);
+    grid-column:0/1;
+}
+.card--bg--white>.userInfo>img{
+    border: 2px var(--Light-gray) solid;
 }
 
 .card--bg--white>.userInfo,
@@ -97,8 +129,12 @@ body{
     color:var(--Very-dark-grayish-blue)
 }
 
-
+/*Patrick card*/
 .card--bg--dark{
     background-color:var(--Very-dark-blackish-blue);
-    color:var(--White)
+    color:var(--White);
+    grid-column:2/4 ;
+}
+.card--bg--dark>.userInfo>img{
+    border: 2px var(--Moderateviolet) solid;
 }
